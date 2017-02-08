@@ -1,0 +1,73 @@
+<html ng-app="goodServices">
+    <head>
+        
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/superhero/bootstrap.min.css">
+    <!-- date picker stylesheet -->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <!-- date picker script file -->    
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>    
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/underscore/underscore.js"></script>    
+
+    
+    </head>
+    <body>
+        
+        <div class="container">
+            
+           <!-- including header.tpl.html file     using   ng-include     directive  
+           <div ng-include="'app/header/header.tpl.html'"></div>   
+                 -->
+            
+             <!-- including header.tpl.html file     using   cmHeader custom   directive  -->
+               <!--custom directive using attribute -->
+            <div cm-header></div>
+ 
+            <!-- retriving cmSlider custom directive
+            <div cm-slider></div>     -->
+            
+        </div>
+        
+        <!--  common -->
+        <script src="app/common/common.js"></script>
+        <script src="app/common/commonLookupService.js"></script>
+        <script src="app/common/commonBrandName.js"></script>
+        <script src="app/common/commonHeader.js"></script>
+        <script src="app/common/commonNumbersOnly.js"></script>
+        <script src="app/common/commonDatePicker.js"></script>
+        <script src="app/common/commonSlider.js"></script>
+        <script src="app/common/commonLogin.js"></script>
+        <script src="app/common/commonPost.js"></script>
+        <script src="app/common/commonUserName.js"></script>
+        
+         <!--header-->
+        <script src="app/header/header.js"></script>
+        <script src="app/header/headerCtrl.js"></script>
+        
+        <!--Login-->
+        <script src="app/login/login.js"></script>
+        <script src="app/login/loginCtrl.js"></script>
+            
+        <!-- products -->    
+        <script src="app/products/products.js"></script>
+        <script src="app/products/productsSvc.js"></script>     <!-- products from service-->  
+        <script src="app/products/productsFac.js"></script>     <!-- products from factory-->  
+        <script src="app/products/productsCtrl.js"></script>
+                
+
+         <!--register-->
+        <script src="app/register/register.js"></script>
+        <script src="app/register/registerCtrl.js"></script>
+        
+         <!--register-->
+        <script src="app/post/post.js"></script>
+        <script src="app/post/postCtrl.js"></script>
+        
+        <!-- app -->
+        <script src="app/app.js"></script>
+
+    </body>   
+</html>

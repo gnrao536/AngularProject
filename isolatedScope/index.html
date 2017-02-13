@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html  ng-app="myapp">
+<script src="bower_components/angular/angular.js"></script>
+<body>
+
+<div ng-controller="myctrl">
+ 
+<p>Name : <input type="text" ng-model="fname" placeholder="Enter name here"></p>
+
+    Controller scope: <div>{{fname}}</div><hr color="green">
+    
+    inherited scope: <div iso></div><hr color="green">
+    
+    isolated scope: <div iso1></div><hr color="green">
+    
+    isolated scope with @: <div iso2 first-name={{fname}}></div><hr color="green">
+    
+    isolated scope with @ and alias name: <div iso3 fn={{fname}}></div><hr color="green">
+    
+    isolated scope with = :<div iso4 first-name="fname"></div><hr color="green">
+    
+    isolated scope with &: <div iso5 done="doShow()"></div><hr color="green">
+
+</div>
+    
+    <script src="index.js"></script>
+
+</body>
+</html>

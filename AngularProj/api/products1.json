@@ -1,0 +1,27 @@
+
+
+{
+    "products":[
+        {
+            "Price":"15000",
+            "Description":"This is an awesome phone",
+            "Model":"samsung",
+            "image":"1.png"
+        },
+         {
+            "Price":"10000",
+            "Description":"This is an awesome phone",
+            "Model":"samsung",
+            "image":"2.png"
+        },
+         {
+          "Price":"12000",
+            "Description":"This is an awesome phone",
+            "Model":"samsung",
+            "image":"3.png"
+        }
+        
+    ]
+    
+} 
+    

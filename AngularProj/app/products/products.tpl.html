@@ -1,5 +1,9 @@
 <div ng-controller="productsCtrl as pc">
-    <div class="row" ng-repeat="item in pc.products">
+    
+        
+    <!-- products from products1.json file-->  
+    
+    <!--<div class="row" ng-repeat="item in pc.products">
         <div class="col-xs-6">
             <div class="thumbnail">
                 <img src="../images/{{item.image}}" alt="Sample Image">
@@ -10,5 +14,43 @@
                 </div>
             </div>
         </div>
+    </div>   -->
+    
+    
+        
+          <!-- products from products.json file-->
+        
+    <div class="row">  
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>S.No</th>
+                    <th>Model</th>
+                    <th>Description</th>
+                    <th><a href="#" ng-click="pc.orderByPrice()">Price <i class="glyphicon glyphicon-sort"></i></a></th>
+                    <th><a href="#" ng-click="pc.showMore()">Show More</a></th>
+                </tr>
+            </thead>
+            <tr ng-repeat="item in pc.products|limitTo:pc.minimumProducts |orderBy:pc.orderByCrietria">
+                <td>
+                    {{item.index}}
+                </td>
+                <td>
+                    {{item.Model}}
+                </td>
+                <td>
+                    {{item.Description}}
+                </td>
+                <td>
+                    {{item.Price|currency :"Rs."}}
+                </td>
+                
+                
+                   <td>
+                   <button class="btn btn-warning">Add To cart</button>
+                </td>
+
+            </tr>
+        </table> 
     </div>
 </div>

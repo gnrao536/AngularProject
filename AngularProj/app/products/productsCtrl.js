@@ -15,6 +15,21 @@
             console.log(error);
         });
         
+        // products filters code
+               vm.minimumProducts=10;
+        vm.showMore = function(){
+          vm.minimumProducts+=10;  
+        }; 
+        vm.orderByCrietria="Price";
+        vm.orderByPrice = function(){
+            if( vm.orderByCrietria=="Price"){
+                vm.orderByCrietria="-Price";
+            }
+            else{
+                 vm.orderByCrietria="Price";
+            }
+        }
+        
     }
     
     // retriving products module

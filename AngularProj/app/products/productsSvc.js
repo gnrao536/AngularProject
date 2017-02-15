@@ -9,7 +9,10 @@
           var deferred=$q.defer();
             
             // making http call
-            $http.get("api/products.json")
+            
+            //$http.get("api/products1.json")    //products from products1.json file
+            
+            $http.get("api/products.json")         //products from products.json  file       
             .then(function(res){
                 deferred.resolve(res);
             })

@@ -1,0 +1,19 @@
+<html>
+<head>
+    <script src="lib/angular.js"></script>
+</head>
+<body ng-app="myapp">
+        
+        <div ng-controller="parentCtrl"   style="border:1px solid green;padding:20px;">
+            <h2>Parent controller</h2>
+            <input type="text" ng-model="msg"> <button ng-click="doBroadcast(msg)">Broadcast</button>
+            
+            <div ng-controller="childCtrl"  style="border:1px solid red;padding:10px;margin:10px;">
+                <h2>Child controller</h2>
+        <p>Broadcast Message : {{message}}</p>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>

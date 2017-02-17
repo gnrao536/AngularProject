@@ -1,0 +1,50 @@
+<html>
+<head>
+    <script src="lib/angular.js"></script>
+     
+</head>
+<body ng-app="myapp">
+    
+ 
+   <div ng-controller="myController">
+    {{data.time}}
+
+    <br/>
+       <br/>
+       
+    <button ng-click="updateTime()">update   ng-click</button>
+    <button id="updateTimeButton"  >update </button>
+    <button id="updateTimeButtonDigest"  >update  Digest</button>
+</div>
+
+
+<script>
+    var module       = angular.module("myapp", []);
+    var myController1 = module.controller("myController", function($scope) {
+ 
+        $scope.data = { time : new Date() };
+
+        // inside angular using ng-click .So automatically digests
+        $scope.updateTime = function() {
+            $scope.data.time = new Date();
+        }
+
+        //  outside the angular so it is not digest 
+        document.getElementById("updateTimeButton")
+                .addEventListener('click', function() {
+            $scope.data.time = new Date();
+        });
+        
+        // outside the angular So digest manually
+        document.getElementById("updateTimeButtonDigest")
+                .addEventListener('click', function() {
+            
+            $scope.data.time = new Date();
+            $scope.$digest();
+        });
+    });
+</script>
+    
+
+</body>
+</html>

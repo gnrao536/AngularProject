@@ -20,37 +20,49 @@
         
           <!-- products from products.json file-->
         
-    <div class="row">  
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>S.No</th>
-                    <th>Model</th>
-                    <th>Description</th>
-                    <th><a href="#" ng-click="pc.orderByPrice()">Price <i class="glyphicon glyphicon-sort"></i></a></th>
-                    <th><a href="#" ng-click="pc.showMore()">Show More</a></th>
-                </tr>
-            </thead>
-            <tr ng-repeat="item in pc.products|limitTo:pc.minimumProducts |orderBy:pc.orderByCrietria">
-                <td>
-                    {{item.index}}
-                </td>
-                <td>
-                    {{item.Model}}
-                </td>
-                <td>
-                    {{item.Description}}
-                </td>
-                <td>
-                    {{item.Price|currency :"Rs."}}
-                </td>
-                
-                
-                   <td>
-                   <button class="btn btn-warning">Add To cart</button>
-                </td>
+        <div class="row">
+       <div class="col-md-3">
+            <input class="form-control" placeholder="Search"
+                   ng-model="pc.genericSearch">
+        </div>
+        <div class="col-md-12">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>S.No</th>
+                        <th>Model</th>
+                        <th>Description</th>
+                        <th><a href="#" ng-click="pc.orderByPrice()">Price <i class="glyphicon glyphicon-sort"></i></a></th>
+                        <th><a href="#" ng-click="pc.showMore()">Show More</a></th>
+                    </tr>
+                </thead>
+                <tr ng-repeat="item in pc.paginatedProducts">
+                    <td>
+                        {{item.index}}
+                    </td>
+                    <td>
+                        {{item.Model}}
+                    </td>
+                    <td>
+                        {{item.Description}}
+                    </td>
+                    <td>
+                        {{item.Price|currency :"Rs."}}
+                    </td>
+                    <td>
+                        <button class="btn btn-warning">Add To cart</button>
+                    </td>
 
-            </tr>
-        </table> 
+                </tr>
+            </table>
+        </div>
     </div>
-</div>
+    
+      <ul uib-pagination 
+          total-items="pc.paginate.totalProductCount"
+          ng-model="pc.paginate.currentPage"
+          max-size="pc.paginate.maxSize"
+          class="pagination-sm" 
+          boundary-link-numbers="true" 
+          rotate="false"
+          ng-click="pc.loadPaginatedProducts()"></ul></div>

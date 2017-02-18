@@ -4,7 +4,7 @@
         //first parameter: Module Name
         //second parameter: module names injected.
     
-    angular.module("goodServices",["register","login","header","common","products","post"]);
+    angular.module("goodServices",["ui.bootstrap","register","login","header","common","products","post"]);
     
         // retriving goodServices module
     angular.module("goodServices")

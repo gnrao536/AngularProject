@@ -2,8 +2,22 @@
     
     // creating named function and passed to productsCtrl controller as callback
 
-    function productsCtrl(productsSvc){
+    function productsCtrl(productsSvc,$rootScope){
         var vm = this;
+        
+        //  products without pagination
+    /*          
+                productsSvc.getProducts()
+        .then( function(res){
+            console.log(res);
+            vm.products= res.data.products;
+            
+        })
+        
+        .catch(function(err){
+            console.log(err);
+        });    */
+        
         
         productsSvc.getProducts()
         .then( function(res){
@@ -51,13 +65,19 @@
             var minCount = maxCount-10;
             vm.paginatedProducts = vm.products.slice(minCount,maxCount);
         }
+        
+        vm.addToCart = function(item){
+            //send notification on adding item to cart.
+            $rootScope.$broadcast("ITEM-ADDED",item);
+            
+        };
     }
     
     // retriving products module
     angular.module("products")
     
             // To get products use productsSvc service  or productsFac factory  
-    .controller("productsCtrl",["productsSvc",productsCtrl]);
+    .controller("productsCtrl",["productsSvc","$rootScope",productsCtrl]);
 })();
 
 

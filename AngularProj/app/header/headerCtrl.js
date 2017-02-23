@@ -1,9 +1,11 @@
 (function(){
         // creating named function and passed to  headerCtrl controller as callback
-    function headerCtrl($scope){
+    function headerCtrl($scope,$rootScope){
         var vm = this;
         vm.brandName = "Good Services Proj";
-        vm.navItems = ["Login","Register","Products","Cart","Post"];
+        vm.cartProducts=[];
+        
+        vm.navItems = ["Login","Register","Products","Post","Cart"];
         vm.loginTemplate = "app/login/login.tpl.html";
         vm.registerTemplate = "app/register/register.tpl.html";
         vm.productsTemplate = "app/products/products.tpl.html";
@@ -28,6 +30,10 @@
             } 
         };
         
+        $rootScope.$on("ITEM-ADDED",function(evt,args){
+            console.log(args);
+            vm.cartProducts.push(args);
+        });     
        
         
     }
@@ -36,5 +42,5 @@
     angular.module("header")
     
         // creating headerCtrl   controller
-    .controller("headerCtrl",["$scope",headerCtrl]);
+    .controller("headerCtrl",["$scope","$rootScope",headerCtrl]);
 })();

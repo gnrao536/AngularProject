@@ -36,6 +36,8 @@
         });
         
         // outside the angular So digest manually with apply method
+        //    and we can use exeception or try catch because code is inside apply()
+        
         document.getElementById("updateTimeButtonDigest")
                 .addEventListener('click', function() {
             $scope.$apply(function(){

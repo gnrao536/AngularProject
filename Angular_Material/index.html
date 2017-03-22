@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.css">
+   <script src="bower_components/angular/angular.js"></script> 
+    <script src="bower_components/angular-material/angular-material.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.js"></script>
+    <script src="bower_components/angular-messages/angular-messages.js"></script>
+    
+    
+    <link rel="stylesheet" href="style.css">    
+</head>
+<body>
+    <div ng-controller='myCtrl'>
+    
+     <md-content md-theme="docs-dark" layout-gt-sm="row" layout-padding>
+        <form name="myForm">
+        
+        <md-input-container class="md-block">
+            <label>Name</label>
+            <input  type="text" ng-model="user.name" name="fname" md-maxlength="10" required>
+            <div ng-messages="myForm.fname.$error">
+                <div ng-message="required">This is required.</div>
+                <div ng-message="md-maxlength">The description must be less than 30 characters long.</div>
+            </div>
+        </md-input-container>
+            
+            
+            
+        <md-input-container class="md-block">
+        <label>Email</label>
+        <input required type="email" name="clientEmail" ng-model="user.email"
+               minlength="10" maxlength="100" ng-pattern="/^.+@.+\..+$/" />
+        <div ng-messages="myForm.clientEmail.$error" role="alert">
+          <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
+            Your email must be between 10 and 100 characters long and look like an e-mail address.
+          </div>
+        </div>
+      </md-input-container> 
+       
+            
+         <md-input-container class="md-block">
+        <label>Phone Number</label>
+        <input required type="text" name="mobile" ng-model="user.mobile"
+               minlength="10" maxlength="10" required />
+        <div ng-messages="myForm.mobile.$error" role="alert">
+          <div ng-message-exp="['required', 'minlength', 'maxlength']">
+            Your must enter 10 Numbers only
+          </div>
+        </div>
+      </md-input-container> 
+       
+            
+            
+       <md-input-container class="md-block">
+            <label>Date of Birth</label>
+            <md-datepicker ng-model="user.dob"  name='dob' required></md-datepicker>
+           <div ng-messages="myForm.dob.$error">
+                <div ng-message="required">This is required.</div>
+            </div>
+        </md-input-container>  
+            
+            
+             <md-input-container class="md-block">
+            <label>State</label>
+            <md-select ng-model="user.state" name='state' required>
+              <md-option ng-repeat="state in states" value='{{state.abbrev}}'>
+                {{state.abbrev}}
+              </md-option>
+            </md-select>
+            <div ng-messages="myForm.state.$error">
+                <div ng-message="required">This is required.</div>
+            </div>
+          </md-input-container>
+            
+            
+            <md-input-container class="md-block">
+        <md-checkbox name="tos" ng-model="user.tos" required>
+          I accept the terms of service.
+        </md-checkbox>
+        <div ng-messages="myForm.tos.$error" multiple md-auto-hide="false">
+          <div ng-message="required">
+            You must accept the terms of service before you can proceed.
+          </div>
+        </div>
+      </md-input-container>
+            
+            
+        <div>
+        <md-button type="submit">Submit</md-button>
+      </div>
+        
+        
+        </form>
+    </md-content>
+    
+    </div>
+    
+    <script src="index.js"></script>
+</body>
+</html>

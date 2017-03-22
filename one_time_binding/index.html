@@ -1,0 +1,14 @@
+<html>
+<head>
+<script src="lib/angular.js"></script>
+</head>
+<body ng-app="">
+
+User Name:<input type="text" ng-model="vm.user">
+<p>
+  Normal binding:{{ vm.user }} <br>
+  One Time binding:{{:: vm.user }}
+
+</p>
+</body>
+</html>

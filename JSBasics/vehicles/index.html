@@ -1,0 +1,28 @@
+<html>
+
+<head></head>
+
+<body>
+    <table>
+        <tr>
+            <td>Year</td>
+            <!--onchange is an event 
+            whenever we change the dropdwon choice
+             we want to load the makes of that year.-->
+            <td><select id="ddlYear" onchange="loadMakes()">
+                        <option value="">Please Select</option>
+                    </select></td>
+        </tr>
+         <tr>
+            <td>Make</td>
+            <!--Load the Makes dynamically when we change the year-->
+            <td><select id="ddlMake">
+                        <option value="">Please Select</option>
+                    </select></td>
+        </tr>
+    </table>
+    <script src="data.js"></script>
+    <script src="vehicles.js"></script>
+</body>
+
+</html>

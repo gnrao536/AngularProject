@@ -1,0 +1,35 @@
+<html>
+    <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/slate/bootstrap.min.css">
+    </head>
+    <body>
+       <%- include('navigation'); %>
+   
+    <h3>Welcome to the cars</h3>
+     <form class="form-horizontal" method="post" action="/cars" >
+    <div class="form-group">
+      
+      <div class="col-lg-4">
+        <input type="text"
+         class="form-control" 
+        name="Year"
+         placeholder="Year">
+      </div>
+       <div class="col-lg-4">
+        <input type="text"
+         class="form-control" 
+        name="Make"
+         placeholder="Make">
+      </div>
+       <div class="col-lg-4">
+        <input type="text"
+         class="form-control" 
+        name="Model"
+         placeholder="Model">
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+    </div>
+    </form>
+    </body>
+    </html>

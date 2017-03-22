@@ -1,0 +1,47 @@
+
+<html>
+    <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/slate/bootstrap.min.css">
+    </head>
+    <body>
+    <div class="container">
+       <%- include('navigation'); %>
+       <form method="post" action="/product/search">
+       <div class ="row">
+        <div class=" col-xs-4">
+            <input class="form-control" type="text" name="search">
+         
+        </div>
+        <div class="col-xs-4">
+           <button class="btn btn-warning">Search</button>
+           </div>
+       </div>
+         </form>
+         <% if(products){ %>
+      <% for(var i=0;i<products.length; i++){ %>
+ <div id="products" class="row list-group">
+        <div class="item  col-xs-4 col-lg-4 clear-fix">
+            <div class="thumbnail">
+                <img class="group list-group-image" src="<%= products[i].largeImage %>" alt="" />
+                <div class="caption">
+                    <h4 class="group inner list-group-item-heading">
+                        Product title</h4>
+                    <p class="group inner list-group-item-text">
+                       <%= products[i].shortDescription %></p>
+                    <div class="row">
+                        <div class="col-xs-12 col-md-6">
+                            <p class="lead">
+                                <%= products[i].salePrice %></p>
+                        </div>
+                        <div class="col-xs-12 col-md-6">
+                            <a class="btn btn-success" href="http://www.jquery2dotnet.com">Add to cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <% }} %>
+      
+        </div>
+        </body>
+        </html>

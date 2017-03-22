@@ -1,0 +1,30 @@
+<html>
+    <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/slate/bootstrap.min.css">
+    </head>
+    <body>
+       <%- include('navigation'); %>
+   
+    <h3>Welcome to the cars</h3>
+    <table class="table table-striped table-hover ">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Year</th>
+      <th>Make</th>
+      <th>Model</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% for(var i=0; i<cars.length; i++){ %>
+    <tr>
+      <td> <%= i+1 %> </td>
+      <td> <%= cars[i].Year %></td>
+      <td><%= cars[i].Make %></td>
+      <td><%= cars[i].Model %></td>
+    </tr>
+    <% } %>
+    </tbody>
+    </table>
+    </body>
+    </html>

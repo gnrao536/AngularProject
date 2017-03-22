@@ -1,0 +1,71 @@
+<html>
+    <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/slate/bootstrap.min.css">
+    </head>
+    <body>
+    <div class="container">
+      <%- include('navigation'); %>
+      <form class="form-horizontal" method="post" action="/register" >
+    <div class="form-group">
+       <div class="col-lg-6">
+        <input type="text"
+         class="form-control" 
+        name="firstName"
+         placeholder="First Name">
+      </div>
+
+         <div class="col-lg-6">
+        <input type="text"
+         class="form-control" 
+        name="lastName"
+         placeholder="Last Name">
+      </div>
+
+      
+         <div class="col-lg-6">
+        <input type="text"
+         class="form-control" 
+        name="phone"
+         placeholder="Phone Number">
+      </div>
+      
+         <div class="col-lg-6">
+        <input type="text"
+         class="form-control" 
+        name="age"
+         placeholder="Age">
+      </div>
+
+
+      <div class="col-lg-6">
+        <input type="text"
+         class="form-control" 
+        name="email"
+         placeholder="Email">
+      </div>
+
+       <div class="col-lg-6">
+        <input type="text"
+         class="form-control" 
+        name="username"
+         placeholder="Username">
+      </div>
+       <div class="col-lg-6">
+        <input type="text"
+         class="form-control" 
+        name="password"
+         placeholder="Password">
+      </div>
+       <div class="col-lg-6">
+        <input type="text"
+         class="form-control" 
+        name="reference"
+         placeholder="How you know our site">
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+    </div>
+    </form>
+    </div>
+    </body>
+</html>

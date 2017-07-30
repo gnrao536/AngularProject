@@ -1,0 +1,23 @@
+<html>
+<head>
+    <script src="lib/angular.js"></script>
+</head>
+<body ng-app="myapp">
+    <div ng-controller="promiseCtrl"    style="border:1px solid green;padding:20px;">
+        
+        
+        
+        <h2> {{result}}</h2>
+        
+          
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
+
+
+<!-- handling of multiple promises in AngularJS is simple if you take advantage of $q.all. Using $q.all will take your promises, wait until they have all resolved and return the result of all the promises as an ordered array. 
+
+A promise has three states, pending, resolved or rejected. 
+-->
